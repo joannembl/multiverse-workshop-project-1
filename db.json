@@ -1,8 +1,9 @@
 {
-    "cars": [
+    "Sedan": [
         {
             "id": 1,
             "name": "2006 Mitsubishi Lancer Evolution IX MR",
+            "image": "https://bringatrailer.com/wp-content/uploads/2019/09/2006_mitsubishi_evolution_ix_15695303108dfc5edd8bc5ddc1-4-e1571170805301.jpg?fit=940%2C626",
             "details": [
                 "Drivetrain: All-wheel Drive",
                 "MPG: 19-25",
@@ -20,8 +21,75 @@
                 "Air Conditioning",
                 "Alcantara Leather Seat Trim W/Red Stitching",
                 "Aluminum/Carbon-Fiber Brake Grip"
+            ]
+        }
+    ],
+    "SUV": [
+        {
+            "id": 1,
+            "name": "2022 Tesla Model Y",
+            "image": "https://cdn.motor1.com/images/mgl/nAXLNy/s1/tesla-model-y-home-charging.jpg",
+            "details": [
+                "Drivetrain: All-wheel Drive",
+                "Electric",
+                "Transmission: Automatic"
             ],
-            "image": "https://bringatrailer.com/wp-content/uploads/2019/09/2006_mitsubishi_evolution_ix_15695303108dfc5edd8bc5ddc1-4-e1571170805301.jpg?fit=940%2C626"
+            "features": [
+                "Dual Power Seats",
+                "Heated Seats",
+                "F&R Parking Sensors",
+                "Forward Camera System",
+                "Backup Camera",
+                "Cruise Control",
+                "Power Liftgate Release",
+                "Push Button Start",
+                "Keyless EntryBluetooth Wireless",
+                "Navigation System"
+            ]
+        }
+    ],
+    "Trucks": [
+        {
+            "id": 1,
+            "name": "2021 Toyota Tundra",
+            "image": "https://media.ed.edmunds-media.com/toyota/tundra/2019/oem/2019_toyota_tundra_crew-cab-pickup_1794_fq_oem_1_1600.jpg",
+            "details": [
+                "Drivetrain: Rear-wheel Drive",
+                "MPG: 13–18",
+                "Fuel Type: Gasoline",
+                "Transmission: 6-speed Automatic",
+                "Engine: 5.7L V8 32V MPFI DOHC"
+            ],
+            "features": [
+                "Adaptive Cruise Control",
+                "Blind Spot Monitor",
+                "Backup Camera",
+                "Lane Departure Warning",
+                "Stability Control",
+                "Heated Door Mirrors",
+                "Traction Control"
+            ]
+        }
+    ],
+    "Super Cars": [
+        {
+            "id": 1,
+            "name": "1998 McLaren F1",
+            "image": "https://www.supercars.net/blog/wp-content/uploads/2016/03/Screenshot-2016-03-24-12.48.38.png",
+            "details": [
+                "Drivetrain: Rear-wheel Drive",
+                "MPG: 9-23",
+                "Fuel Type: Gasoline",
+                "Transmission: 6-speed Manual",
+                "Engine: Naturally Aspirated 6.0-liter DOHC V12"
+            ],
+            "features": [
+                "Luxurious Interior",
+                "Double Wishbone Suspension",
+                "A Three-Seat Supercar",
+                "Unique Suspension Setup",
+                "Lighter Than Modern Supercars"
+            ]
         }
     ]
 }
