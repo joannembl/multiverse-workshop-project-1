@@ -1,16 +1,17 @@
 {
-    "Sedan": [
+    "sedan": [
         {
             "id": 1,
-            "name": "2006 Mitsubishi Lancer Evolution IX MR",
-            "image": "https://bringatrailer.com/wp-content/uploads/2019/09/2006_mitsubishi_evolution_ix_15695303108dfc5edd8bc5ddc1-4-e1571170805301.jpg?fit=940%2C626",
-            "details": [
-                "Drivetrain: All-wheel Drive",
-                "MPG: 19-25",
-                "Fuel Type: Gasoline",
-                "Transmission: 6-speed Manual",
-                "Engine: 2.0L I4 16V MPFI DOHC Turbo"
-            ],
+            "Year": "2006",
+            "Make": "Mitsubishi",
+            "Model": "Lancer Evolution IX MR",
+            "Color": "Gray",
+            "image": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F05%2Funmodified-mitsubishi-lancer-evolution-ix-auction-info-twtr.jpg?w=960&cbr=1&q=90&fit=max",
+            "Drivetrain": "All-wheel Drive",
+            "MPG": "18–24",
+            "Fuel-Type": "Gasoline",
+            "Transmission": "6-Speed Manual",
+            "Engine": "2.0L I4 16V MPFI DOHC Turbo",
             "features": [
                 "17 X 8 BBS One-Piece Forged Aluminum Wheels",
                 "4-Wheel Disc Brakes",
@@ -27,39 +28,49 @@
     "SUV": [
         {
             "id": 1,
-            "name": "2022 Tesla Model Y",
-            "image": "https://cdn.motor1.com/images/mgl/nAXLNy/s1/tesla-model-y-home-charging.jpg",
-            "details": [
-                "Drivetrain: All-wheel Drive",
-                "Electric",
-                "Transmission: Automatic"
-            ],
+            "Year": "2021",
+            "Make": "Ford",
+            "Model": "Explorer ST",
+            "Color": "Red",
+            "image": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/explorer/2022/collections/equipments/3_2/20_FRD_EPR_400003_ST_LucidRed_32.jpg",
+            "Drivetrain": "Four-wheel Drive",
+            "MPG": "18–24",
+            "Fuel-Type": "Gasoline",
+            "Transmission": "10-Speed Automatic",
+            "Engine": "3.0L V6 24V GDI DOHC Twin Turbo",
             "features": [
-                "Dual Power Seats",
-                "Heated Seats",
-                "F&R Parking Sensors",
-                "Forward Camera System",
+                "Adaptive Cruise Control",
+                "Heated Steering Wheel",
+                "Power Liftgate",
+                "Remote Start",
+                "Apple CarPlay/Android Auto",
+                "Bluetooth",
+                "Premium Sound System",
+                "Alloy Wheels",
+                "Sunroof/Moonroof",
+                "Tow Hitch",
                 "Backup Camera",
-                "Cruise Control",
-                "Power Liftgate Release",
-                "Push Button Start",
-                "Keyless EntryBluetooth Wireless",
-                "Navigation System"
+                "Blind Spot Monitor",
+                "Brake Assist",
+                "Stability Control",
+                "Leather Seats",
+                "Third Row Seating"
             ]
         }
     ],
-    "Trucks": [
+    "trucks": [
         {
             "id": 1,
-            "name": "2021 Toyota Tundra",
-            "image": "https://media.ed.edmunds-media.com/toyota/tundra/2019/oem/2019_toyota_tundra_crew-cab-pickup_1794_fq_oem_1_1600.jpg",
-            "details": [
-                "Drivetrain: Rear-wheel Drive",
-                "MPG: 13–18",
-                "Fuel Type: Gasoline",
-                "Transmission: 6-speed Automatic",
-                "Engine: 5.7L V8 32V MPFI DOHC"
-            ],
+            "Year": "2021 Toyota Tundra",
+            "Make": "Toyota",
+            "Model": "Tundra",
+            "Color": "Blue",
+            "image": "https://dealerimages.dealereprocess.com/image/upload/2412452",
+            "Drivetrain": "Four-wheel Drive",
+            "MPG": "13–17",
+            "Fuel-Type": "Gasoline",
+            "Transmission": "6-Speed Automatic",
+            "Engine": "5.7L V8 32V MPFI DOHC",
             "features": [
                 "Adaptive Cruise Control",
                 "Blind Spot Monitor",
@@ -71,18 +82,16 @@
             ]
         }
     ],
-    "Super Cars": [
+    "super-cars": [
         {
             "id": 1,
             "name": "1998 McLaren F1",
             "image": "https://www.supercars.net/blog/wp-content/uploads/2016/03/Screenshot-2016-03-24-12.48.38.png",
-            "details": [
-                "Drivetrain: Rear-wheel Drive",
-                "MPG: 9-23",
-                "Fuel Type: Gasoline",
-                "Transmission: 6-speed Manual",
-                "Engine: Naturally Aspirated 6.0-liter DOHC V12"
-            ],
+            "Drivetrain": "Rear-wheel Drive",
+            "MPG": "9-23",
+            "Fuel-Type": "Gasoline",
+            "Transmission": "6-speed Manual",
+            "Engine": "Naturally Aspirated 6.0-liter DOHC V12",
             "features": [
                 "Luxurious Interior",
                 "Double Wishbone Suspension",
