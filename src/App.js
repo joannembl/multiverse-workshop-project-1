@@ -1,9 +1,14 @@
-import './App.css';
 import {TextField, Button, InputLabel, FormControl, MenuItem, Select} from "@mui/material/";
+import { Home, CarDetails, Admin } from './routes';
 
 function App() {
   return (
     <div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/details' element={<CarDetails />} />
+        <Route path='/admin' element={<Admin />} />
+      </Routes>
       <FormControl>
         <InputLabel id="type-select-label">Category</InputLabel>
         <Select
