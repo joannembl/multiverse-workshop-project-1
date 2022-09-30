@@ -81,24 +81,5 @@
                 "Traction Control"
             ]
         }
-    ],
-    "super-cars": [
-        {
-            "id": 1,
-            "name": "1998 McLaren F1",
-            "image": "https://www.supercars.net/blog/wp-content/uploads/2016/03/Screenshot-2016-03-24-12.48.38.png",
-            "Drivetrain": "Rear-wheel Drive",
-            "MPG": "9-23",
-            "Fuel-Type": "Gasoline",
-            "Transmission": "6-speed Manual",
-            "Engine": "Naturally Aspirated 6.0-liter DOHC V12",
-            "features": [
-                "Luxurious Interior",
-                "Double Wishbone Suspension",
-                "A Three-Seat Supercar",
-                "Unique Suspension Setup",
-                "Lighter Than Modern Supercars"
-            ]
-        }
     ]
 }
