@@ -15,9 +15,18 @@ function App() {
           <MenuItem value={2}>Sedan</MenuItem>
           <MenuItem value={3}>Truck</MenuItem>
         </Select>
-        <TextField label="Make" variant="outlined" />
-        <TextField label="Model" variant="outlined" />
-        <TextField label="Color" variant="outlined" />
+        <TextField label="Make" />
+        <TextField label="Model" />
+        <TextField label="Year" />
+        <TextField label="Color" />
+        <TextField label="Image URL" />
+        <TextField label="Drivetrain" />
+        <TextField label="MPG" />
+        <TextField label="Fuel-Type" />
+        <TextField label="Transmission" />
+        <TextField label="Engine"/>
+        <TextField label="Features" multiline rows={6}
+        maxRows={4}/>
         <Button variant="contained">Submit</Button>
       </FormControl>
     </div>
