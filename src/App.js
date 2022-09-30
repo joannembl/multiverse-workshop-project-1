@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {TextField, Button, InputLabel, FormControl, MenuItem, Select} from "@mui/material/";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FormControl>
+        <InputLabel id="type-select-label">Category</InputLabel>
+        <Select
+          labelId="type"
+          id="type-select"
+          label="Type"
+          >
+          <MenuItem value={1}>SUV</MenuItem>
+          <MenuItem value={2}>Sedan</MenuItem>
+          <MenuItem value={3}>Truck</MenuItem>
+        </Select>
+        <TextField label="Make" variant="outlined" />
+        <TextField label="Model" variant="outlined" />
+        <TextField label="Color" variant="outlined" />
+        <Button variant="contained">Submit</Button>
+      </FormControl>
     </div>
   );
 }
