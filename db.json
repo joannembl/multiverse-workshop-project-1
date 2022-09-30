@@ -1,0 +1,27 @@
+{
+    "cars": [
+        {
+            "id": 1,
+            "name": "2006 Mitsubishi Lancer Evolution IX MR",
+            "details": [
+                "Drivetrain: All-wheel Drive",
+                "MPG: 19-25",
+                "Fuel Type: Gasoline",
+                "Transmission: 6-speed Manual",
+                "Engine: 2.0L I4 16V MPFI DOHC Turbo"
+            ],
+            "features": [
+                "17 X 8 BBS One-Piece Forged Aluminum Wheels",
+                "4-Wheel Disc Brakes",
+                "4-wheel ABS Brakes",
+                "6-Speed Manual Transmission Aluminum Shift Knob",
+                "ABS Brakes",
+                "AM/FM Radio/Stereo",
+                "Air Conditioning",
+                "Alcantara Leather Seat Trim W/Red Stitching",
+                "Aluminum/Carbon-Fiber Brake Grip"
+            ],
+            "image": "https://bringatrailer.com/wp-content/uploads/2019/09/2006_mitsubishi_evolution_ix_15695303108dfc5edd8bc5ddc1-4-e1571170805301.jpg?fit=940%2C626"
+        }
+    ]
+}
