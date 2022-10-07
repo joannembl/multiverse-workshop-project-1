@@ -5,7 +5,6 @@ import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
 
 function Home() {
-  
   const [entries, setEntries] = useState(20);
   const [car, setCar] = useState([]);
 
@@ -32,11 +31,8 @@ function Home() {
             <NavBar />
             <SearchBar />
         </div>
-        {car.map((car) => (
-          <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
-        ))}
         <div className='tags'>
-            <span className='total-records'>Total Records Found: 0</span>
+            <span className='total-records'>Total Records Found: {car.length}</span>
             <div className='display-entries'>
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
