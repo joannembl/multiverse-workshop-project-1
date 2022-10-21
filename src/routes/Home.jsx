@@ -1,11 +1,16 @@
 import { React, useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FormControl, MenuItem, Select, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
+import { selectDisplayEntries, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
 
 function Home() {
-  const [entries, setEntries] = useState(20);
+  const dispatch = useDispatch();
+  const displayEntriesValue = useSelector(selectDisplayEntries);
+  const displayPagenumber = useSelector(selectPageNumber);
+
   const [car, setCar] = useState([]);
 
   const getData = async () => {
@@ -14,15 +19,18 @@ function Home() {
     console.log("Data: ", data);
 
     setCar(data);
-  };  
+  };
 
 	useEffect(() => {
     getData();
-
   }, []);
 
   const handleEntriesChange = (e) => {
-    setEntries(e.target.value);
+    dispatch(setDisplayEntries(e.target.value));
+  }
+
+  const handlePageChange = (e) => {
+    dispatch(setPageNumber(e.target.value));
   }
 
   return (
@@ -37,7 +45,8 @@ function Home() {
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
                     <Select
-                        value={entries}
+                        defaultValue={displayEntriesValue}
+                        value={displayEntriesValue}
                         onChange={handleEntriesChange}
                     >
                         <MenuItem value={5}>5 entries</MenuItem>
@@ -50,7 +59,7 @@ function Home() {
         <div> 
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             {car.map((car) => (
-              <Grid item xs={4}>
+              <Grid item xs={4} key={car.id}>
                 <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
               </Grid>
             ))}
