@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { FormControl, MenuItem, Select } from '@mui/material';
+import { FormControl, MenuItem, Select, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
@@ -47,9 +47,15 @@ function Home() {
                 </FormControl>
             </div>
         </div>
-        {car.map((car) => (
-          <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
-        ))}
+        <div> 
+        <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            {car.map((car) => (
+              <Grid item xs={4}>
+                <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
     </div>
   )
 }
