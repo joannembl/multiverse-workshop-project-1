@@ -11,14 +11,14 @@ function Home() {
   const displayEntriesValue = useSelector(selectDisplayEntries);
   const displayPagenumber = useSelector(selectPageNumber);
 
-  const [car, setCar] = useState([]);
+  const [cars, setCars] = useState([]);
 
   const getData = async () => {
     const response = await fetch("http://localhost:3000/cars");
     const data = await response.json();
     console.log("Data: ", data);
 
-    setCar(data);
+    setCars(data);
   };
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ function Home() {
             <SearchBar />
         </div>
         <div className='tags'>
-            <span className='total-records'>Total Records Found: {car.length}</span>
+            <span className='total-records'>Total Records Found: {cars.length}</span>
             <div className='display-entries'>
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
@@ -58,7 +58,7 @@ function Home() {
         </div>
         <div> 
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            {car.map((car) => (
+            {cars.map((car) => (
               <Grid item xs={4} key={car.id}>
                 <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
               </Grid>
