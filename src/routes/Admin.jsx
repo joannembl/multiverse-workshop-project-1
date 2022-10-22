@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { TextField, Button, InputLabel, FormControl, MenuItem, Select } from "@mui/material/";
+import { useNavigate } from 'react-router-dom';
 
 function Admin() {
+  const navigate = useNavigate();
   const [category, setCategory] = useState('');
   const [make, setMake] = useState('');
   const [model, setModel] = useState('');
@@ -111,6 +113,7 @@ function Admin() {
             <Button variant="contained" type='submit'>Submit</Button>
         </FormControl>
         </form>
+        <Button onClick={() => navigate('/')}>Go to Home</Button>
     </div>
   )
 }

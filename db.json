@@ -10,7 +10,7 @@
       "image": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F05%2Funmodified-mitsubishi-lancer-evolution-ix-auction-info-twtr.jpg?w=960&cbr=1&q=90&fit=max",
       "drivetrain": "All-wheel Drive",
       "mpg": "18–24",
-      "fuel-type": "Gasoline",
+      "fuelType": "Gasoline",
       "transmission": "6-Speed Manual",
       "engine": "2.0L I4 16V MPFI DOHC Turbo",
       "features": [
@@ -35,7 +35,7 @@
       "image": "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/explorer/2022/collections/equipments/3_2/20_FRD_EPR_400003_ST_LucidRed_32.jpg",
       "drivetrain": "Four-wheel Drive",
       "mpg": "18–24",
-      "fuel-type": "Gasoline",
+      "fuelType": "Gasoline",
       "transmission": "10-Speed Automatic",
       "engine": "3.0L V6 24V GDI DOHC Twin Turbo",
       "features": [
@@ -67,7 +67,7 @@
       "image": "https://dealerimages.dealereprocess.com/image/upload/2412452",
       "drivetrain": "Four-wheel Drive",
       "mpg": "13–17",
-      "fuel-type": "Gasoline",
+      "fuelType": "Gasoline",
       "transmission": "6-Speed Automatic",
       "engine": "5.7L V8 32V MPFI DOHC",
       "features": [
@@ -79,6 +79,51 @@
         "Heated Door Mirrors",
         "Traction Control"
       ]
+    },
+    {
+      "category": "Sedan",
+      "make": "Chevrolet",
+      "model": "Chevelle SS",
+      "year": "1971",
+      "color": "Red",
+      "image": "https://platform.cstatic-images.com/xlarge/in/v2/b1e20dc9-1ce5-592e-a496-bbb25cb1e2fa/7f79b02e-5d15-4ede-9303-dc5529b6f95d/dMAFtosSb_dL81sdYqFF422cdUU.jpg",
+      "drivetrain": "Rear-wheel Drive",
+      "mpg": "10-15",
+      "fuelType": "Gasoline",
+      "transmission": "5-Speed Manual",
+      "engine": " 350-cubic-inch V8",
+      "badge": "Classic",
+      "id": 4
+    },
+    {
+      "category": "Sedan",
+      "make": "BMW",
+      "model": "2002 tii",
+      "year": "1974",
+      "color": "Silver",
+      "image": "https://platform.cstatic-images.com/xlarge/in/v2/db1143c7-624e-4473-b240-7cc221d896bf/90928cdb-004c-4c00-aa8e-9dedf6339126/G15Sbqjp2__FS5Uun95cGxkGJvo.jpg",
+      "drivetrain": "Rear-wheel Drive",
+      "mpg": "16-23",
+      "fuelType": " Gasoline",
+      "transmission": " 4-Speed Manual",
+      "engine": "2.0-liter 8-valve I-4 With SOHC",
+      "badge": "Classic",
+      "id": 5
+    },
+    {
+      "category": "Sedan",
+      "make": "BMW",
+      "model": "M3",
+      "year": "2005",
+      "color": "Blue",
+      "image": "https://platform.cstatic-images.com/xlarge/in/v2/71149efa-2fde-5fba-aae8-3d46bf125357/e2c23ec7-0d2d-4a6e-83d6-95429998f59a/zwEFQcH2AE7tdjVs0A5QK2stxIE.jpg",
+      "drivetrain": "Rear-wheel Drive",
+      "mpg": "16–22",
+      "fuelType": " Gasoline",
+      "transmission": " 6-Speed Manual",
+      "engine": "3.2L I6 S54 Engine",
+      "badge": "Old",
+      "id": 6
     }
   ]
 }

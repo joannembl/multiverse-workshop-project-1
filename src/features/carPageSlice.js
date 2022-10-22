@@ -67,8 +67,6 @@ export function setPageNumber(value) {
 
 
 /* SELECTORS */
-export const selectAllCars = (state) => state.allCars;
-
 export const selectSearchTerm = (state) => state.searchTerm;
 
 export const selectDisplayEntries = (state) => state.displayEntries;

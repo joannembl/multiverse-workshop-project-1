@@ -66,10 +66,10 @@ code {
   padding: 40px;
 }
 
-/* .back-to-all button {
-  width: 300px; 
-  height: 50px; 
-  font-weight: bold;
-  outline: solid 1.5px;
-  border-radius: 0px;
-} */
+.car-name {
+  border-top: 4px #1864ab solid;
+}
+
+.collapsible {
+  padding: 50px;
+}
