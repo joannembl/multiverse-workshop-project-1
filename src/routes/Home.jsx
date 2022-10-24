@@ -5,9 +5,12 @@ import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
 import { selectDisplayEntries, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
+import { AccountCircle } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const displayEntriesValue = useSelector(selectDisplayEntries);
   const displayPagenumber = useSelector(selectPageNumber);
 
@@ -38,6 +41,7 @@ function Home() {
         <div className='navigation'>
             <NavBar />
             <SearchBar />
+            <AccountCircle sx={{fontSize: '3rem'}} onClick={() => navigate('/admin')}/>
         </div>
         <div className='tags'>
             <span className='total-records'>Total Records Found: {cars.length}</span>
@@ -60,7 +64,7 @@ function Home() {
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             {cars.map((car) => (
               <Grid item xs={4} key={car.id}>
-                <CarCard year={car.year} make={car.make} model={car.model} image={car.image}/>
+                <CarCard id={car.id} year={car.year} make={car.make} model={car.model} image={car.image}/>
               </Grid>
             ))}
           </Grid>
