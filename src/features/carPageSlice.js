@@ -1,11 +1,30 @@
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
 const initialState = {
+    cars: [],
+    car: {},
+    isLoading: true,
     searchTerm: '',
     displayEntries: 10,
     pageNumber: 1,
 };
 
+export const getCars = createAsyncThunk('cars/getCars', () => {
+    return fetch("http://localhost:3000/cars")
+        .then((resp) => resp.json())
+        .catch((err) => console.log(err));
+});
 
 /* REDUCERS */
+export const carsReducer = (state = initialState.cars, action) => {
+    switch(action.type) {
+        case 'cars/getCars/fulfilled':
+            return action.payload;
+        default:
+            return state;
+    }
+};
+
 export const searchTermReducer = (state = initialState.searchTerm, action) => {
     switch (action.type) {
         case 'searchTerm/setSearchTerm':
@@ -72,3 +91,5 @@ export const selectSearchTerm = (state) => state.searchTerm;
 export const selectDisplayEntries = (state) => state.displayEntries;
 
 export const selectPageNumber = (state) => state.pageNumber;
+
+export const selectAllCars = (state) => state.cars;

@@ -22,8 +22,6 @@ function CarDetails() {
         });
   }, [params.id]);
 
-  console.log(car);
-
   if (!car) {
     return <>loading...</>;
   }
