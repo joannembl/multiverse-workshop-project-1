@@ -4,7 +4,7 @@ import { FormControl, MenuItem, Select, Grid } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
-import { selectDisplayEntries, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
+import { getCars, selectAllCars, selectDisplayEntries, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
 import { AccountCircle } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,19 +14,22 @@ function Home() {
   const displayEntriesValue = useSelector(selectDisplayEntries);
   const displayPagenumber = useSelector(selectPageNumber);
 
-  const [cars, setCars] = useState([]);
+  // const [cars, setCars] = useState([]);
 
-  const getData = async () => {
-    const response = await fetch("http://localhost:3000/cars");
-    const data = await response.json();
-    console.log("Data: ", data);
+  // const getData = async () => {
+  //   const response = await fetch("http://localhost:3000/cars");
+  //   const data = await response.json();
+  //   console.log("Data: ", data);
 
-    setCars(data);
-  };
+  //   setCars(data);
+  // };
 
 	useEffect(() => {
-    getData();
+    //getData();
+    dispatch(getCars());
   }, []);
+
+  const cars = useSelector(selectAllCars);
 
   const handleEntriesChange = (e) => {
     dispatch(setDisplayEntries(e.target.value));
