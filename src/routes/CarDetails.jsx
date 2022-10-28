@@ -1,4 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Button, Card, CardMedia, Grid, Stack, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Button, Card, CardMedia, Grid, Stack, Typography, Chip, Box } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import NavBar from '../components/NavBar';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -10,6 +10,9 @@ function CarDetails() {
   const params = useParams();
 
   const [ car, setCar ] = useState(null);
+
+  let badge = "";
+  let color = "";
 
   useEffect(() => {
     fetch(`http://localhost:3000/cars/${params.id}`)
@@ -52,6 +55,17 @@ function CarDetails() {
     }
   ];
 
+  if(car.year >= 2010){
+    badge = "New";
+    color = "success";
+  } else if (car.year <= 2000) {
+    badge = "Classic";
+    color = "error";
+  } else {
+    badge = "Old";
+    color = "primary";
+  }
+
   return (
     <div>
       <div className='navigation'>
@@ -74,8 +88,11 @@ function CarDetails() {
                 <CardMedia className='car-image' component="img" image={car.image} alt="Car"/>
             </Card>
             <Typography className='car-name' variant="h5" component="div" sx={{textAlign: 'center', padding: '30px', margin:'30px', fontSize:'1.8rem' }}>
-              <span>{car.year}</span> <span>{car.make}</span> <span>{car.model}</span>
+              <span><Chip label={badge} color={color} /></span> <span>{car.year}</span> <span>{car.make}</span> <span>{car.model}</span>
             </Typography>
+            {/* <Box style={{ display: 'flex', justifyContent:"center" }}>
+              <Chip label={badge} color={color} />
+            </Box> */}
           </Grid>
           <Grid className='collapsible' item xs={5}>
           {carList.map((car) => (
