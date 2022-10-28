@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, TextField, IconButton } from '@mui/material';
+import { TextField, IconButton } from '@mui/material';
 import { ClearSharp } from '@mui/icons-material';
 import { clearSearchTerm, setSearchTerm, selectSearchTerm } from '../features/carPageSlice';
 
@@ -10,7 +10,7 @@ function SearchBar() {
 
   const handleInput = (e) => {
     dispatch(setSearchTerm(e.target.value));
-  }
+  };
 
   const onClear = () => {
     dispatch(clearSearchTerm());
@@ -20,7 +20,7 @@ function SearchBar() {
     <div className='search'>
         <TextField 
           fullWidth id='search-bar' 
-          label='Search' 
+          label='Search by Make' 
           variant='outlined'
           onChange={handleInput}
           value={searchTerm}
@@ -28,12 +28,6 @@ function SearchBar() {
             endAdornment: <IconButton sx={{ visibility: searchTerm ? "visible" : "hidden" }} onClick={onClear}><ClearSharp /></IconButton>
           }}
         />
-        <Button 
-          id='search-button' 
-          variant='contained'
-        >
-          Search
-        </Button>
     </div>
   )
 }

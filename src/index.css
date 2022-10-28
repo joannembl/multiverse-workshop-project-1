@@ -73,3 +73,11 @@ code {
 .collapsible {
   padding: 50px;
 }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+}
