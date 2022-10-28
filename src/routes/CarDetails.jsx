@@ -55,10 +55,10 @@ function CarDetails() {
     }
   ];
 
-  if(car.year >= 2010){
+  if(car.year > 2010){
     badge = "New";
     color = "success";
-  } else if (car.year <= 2000) {
+  } else if (car.year < 2000) {
     badge = "Classic";
     color = "error";
   } else {
@@ -88,7 +88,7 @@ function CarDetails() {
                 <CardMedia className='car-image' component="img" image={car.image} alt="Car"/>
             </Card>
             <Typography className='car-name' variant="h5" component="div" sx={{textAlign: 'center', padding: '30px', margin:'30px', fontSize:'1.8rem' }}>
-              <span><Chip label={badge} color={color} /></span> <span>{car.year}</span> <span>{car.make}</span> <span>{car.model}</span>
+              <span><Chip label={car.badge} color={color} /></span> <span>{car.year}</span> <span>{car.make}</span> <span>{car.model}</span>
             </Typography>
             {/* <Box style={{ display: 'flex', justifyContent:"center" }}>
               <Chip label={badge} color={color} />
