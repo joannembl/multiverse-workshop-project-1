@@ -124,6 +124,21 @@
       "engine": "3.2L I6 S54 Engine",
       "badge": "Old",
       "id": 5
+    },
+    {
+      "category": "Sedan",
+      "make": "Toyota",
+      "model": "Supra 2.0",
+      "year": "2021",
+      "color": "Renaissance Red",
+      "image": "https://platform.cstatic-images.com/xlarge/in/v2/707cf9b2-ccf4-52e2-ab24-e6d893cfa7ab/e37a1bfc-afad-46db-9a3c-82dd0e4e1908/CsEds88TKNMVSSQbfmLsYvNKb1M.jpg",
+      "drivetrain": "Rear-wheel Drive",
+      "mpg": "25–32",
+      "fuelType": "Gasoline",
+      "transmission": " 8-Speed Automatic",
+      "engine": "2.0L I4 16V GDI DOHC Turbo",
+      "badge": "New",
+      "id": 6
     }
   ]
 }

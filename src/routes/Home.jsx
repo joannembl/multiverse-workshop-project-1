@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FormControl, MenuItem, Select, Grid } from '@mui/material';
+import { FormControl, MenuItem, Select, Grid, Pagination } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
@@ -14,20 +14,25 @@ function Home() {
   const displayEntriesValue = useSelector(selectDisplayEntries);
   const displayPagenumber = useSelector(selectPageNumber);
 
-  // const [cars, setCars] = useState([]);
+  const [car, setCar] = useState([]);
 
-  // const getData = async () => {
-  //   const response = await fetch("http://localhost:3000/cars");
-  //   const data = await response.json();
-  //   console.log("Data: ", data);
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
 
-  //   setCars(data);
-  // };
+  const getData = async () => {
+    const response = await fetch(`http://localhost:3000/cars?_page=${page}&_limit=3`);
+    const data = await response.json();
+    console.log("Data: ", data);
+
+    setCar(data);
+  };
 
 	useEffect(() => {
-    //getData();
-    dispatch(getCars());
-  }, []);
+    getData();
+    // dispatch(getCars());
+  }, [page]);
 
   const cars = useSelector(selectAllCars);
 
@@ -47,7 +52,7 @@ function Home() {
             <AccountCircle sx={{fontSize: '3rem'}} onClick={() => navigate('/admin')}/>
         </div>
         <div className='tags'>
-            <span className='total-records'>Total Records Found: {cars.length}</span>
+            <span className='total-records'>Total Records Found: {car.length}</span>
             <div className='display-entries'>
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
@@ -65,12 +70,13 @@ function Home() {
         </div>
         <div> 
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            {cars.map((car) => (
+            {car.map((car) => (
               <Grid item xs={4} key={car.id}>
                 <CarCard id={car.id} year={car.year} make={car.make} model={car.model} image={car.image}/>
               </Grid>
             ))}
           </Grid>
+          <Pagination count={5} page={page} onChange={handleChange} />
         </div>
     </div>
   )
