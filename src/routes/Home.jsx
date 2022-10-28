@@ -1,43 +1,38 @@
-import { React, useEffect, useState } from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FormControl, MenuItem, Select, Grid } from '@mui/material';
+import { FormControl, MenuItem, Select, Grid, Pagination } from '@mui/material';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CarCard from '../components/CarCard';
-import { getCars, selectAllCars, selectDisplayEntries, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
+import { getCars, selectDisplayEntries, selectFilteredCars, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
 import { AccountCircle } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import Pages from '../components/Pages';
 
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const displayEntriesValue = useSelector(selectDisplayEntries);
-  const displayPagenumber = useSelector(selectPageNumber);
-
-  // const [cars, setCars] = useState([]);
-
-  // const getData = async () => {
-  //   const response = await fetch("http://localhost:3000/cars");
-  //   const data = await response.json();
-  //   console.log("Data: ", data);
-
-  //   setCars(data);
-  // };
+  const page = useSelector(selectPageNumber);
+  const limit = useSelector(selectDisplayEntries);
 
 	useEffect(() => {
-    //getData();
-    dispatch(getCars());
+    dispatch(getCars(1, 10));
+    console.log('happening')
   }, []);
 
-  const cars = useSelector(selectAllCars);
+  const cars = useSelector(selectFilteredCars);
 
-  const handleEntriesChange = (e) => {
-    dispatch(setDisplayEntries(e.target.value));
+  const handleEntriesChange = (event, value) => {
+    dispatch(setDisplayEntries(value));
   }
 
-  const handlePageChange = (e) => {
-    dispatch(setPageNumber(e.target.value));
-  }
+  const count = Number.parseInt((cars.length / limit) + 1);
+
+  const handlePageChange = (event, value) => {
+    dispatch(getCars({page, limit}))
+    dispatch(setPageNumber(value));
+};
 
   return (
     <div>
@@ -71,6 +66,17 @@ function Home() {
               </Grid>
             ))}
           </Grid>
+        </div>
+        <div className='pagination' >
+          <Pagination 
+              count={count}
+              color='primary'
+              variant="outlined"
+              shape="rounded"
+              size="large"
+              onChange={handlePageChange}
+              page={page}
+          />
         </div>
     </div>
   )

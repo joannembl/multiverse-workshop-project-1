@@ -2,16 +2,20 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
     cars: [],
-    car: {},
-    isLoading: true,
     searchTerm: '',
     displayEntries: 10,
     pageNumber: 1,
 };
 
-export const getCars = createAsyncThunk('cars/getCars', () => {
-    return fetch("http://localhost:3000/cars")
-        .then((resp) => resp.json())
+export const getCars = createAsyncThunk('cars/getCars', ({page, limit}) => {
+    const url = (page && limit) ? `http://localhost:3000/cars?_pages=${page}&_limit=${limit}` : `http://localhost:3000/cars`
+    return fetch(url)
+        .then((resp) => {
+            console.log(page);
+            return resp.json();
+        }
+        
+        )
         .catch((err) => console.log(err));
 });
 
@@ -93,3 +97,10 @@ export const selectDisplayEntries = (state) => state.displayEntries;
 export const selectPageNumber = (state) => state.pageNumber;
 
 export const selectAllCars = (state) => state.cars;
+
+export const selectFilteredCars = (state) => {
+    const cars = selectAllCars(state);
+    const searchTerm = selectSearchTerm(state);
+
+    return cars.filter((car) => car.make.toLowerCase().includes(searchTerm.toLowerCase()));
+};
