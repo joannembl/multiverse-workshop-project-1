@@ -10,6 +10,7 @@ This project is to emulate a car search dashboard that mimics some of the operat
 
 ## Actual
 <img width="1720" alt="Screen Shot 2022-10-31 at 8 51 49 AM" src="https://user-images.githubusercontent.com/106843213/199051371-82572964-0e1b-4b8a-829f-7c165be0322d.png">
+<img width="1708" alt="Screen Shot 2022-10-31 at 8 53 42 AM" src="https://user-images.githubusercontent.com/106843213/199051572-72b30f2e-f2d1-4ed6-830a-e4b26768a51f.png">
 
 ---
 
