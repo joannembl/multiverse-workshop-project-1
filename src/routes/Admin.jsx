@@ -68,6 +68,8 @@ function Admin() {
     setTransmission('');
     setEngine('');
     setBadge('');
+
+    navigate('/');
   };
 
   return (
