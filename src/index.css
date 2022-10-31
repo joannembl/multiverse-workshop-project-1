@@ -81,3 +81,35 @@ code {
   align-items: center;
   padding: 50px;
 }
+
+/* ADMIN Form Style */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-field-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.badge-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-input button {
+  margin: 10px;
+  padding: 10px;
+}
