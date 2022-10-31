@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FormControl, MenuItem, Select, Grid, Pagination } from '@mui/material';
 import NavBar from '../components/NavBar';
@@ -7,32 +7,35 @@ import CarCard from '../components/CarCard';
 import { getCars, selectDisplayEntries, selectFilteredCars, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
 import { AccountCircle } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import Pages from '../components/Pages';
 
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const displayEntriesValue = useSelector(selectDisplayEntries);
-  const page = useSelector(selectPageNumber);
   const limit = useSelector(selectDisplayEntries);
-
-	useEffect(() => {
-    dispatch(getCars(1, 10));
-    console.log('happening')
-  }, []);
-
+  const page = useSelector(selectPageNumber);
   const cars = useSelector(selectFilteredCars);
+  const [length, setLength] = useState(0);
+  const count = Number.parseInt((length / limit) + 1);
 
-  const handleEntriesChange = (event, value) => {
-    dispatch(setDisplayEntries(value));
-  }
+  const getDataLength = async () => {
+    const res = await fetch("http://localhost:3000/cars");
+    const data = await res.json();
+    setLength(data.length);
+  };
 
-  const count = Number.parseInt((cars.length / limit) + 1);
+  const handleEntriesChange = (e) => {
+    dispatch(setDisplayEntries(e.target.value));
+    dispatch(setPageNumber(1));
+  };
 
   const handlePageChange = (event, value) => {
-    dispatch(getCars({page, limit}))
     dispatch(setPageNumber(value));
-};
+  };
+
+  useEffect(() => {
+    getDataLength();
+    dispatch(getCars({page, limit}));
+  }, [page, limit, count]);
 
   return (
     <div>
@@ -42,13 +45,13 @@ function Home() {
             <AccountCircle sx={{fontSize: '3rem'}} onClick={() => navigate('/admin')}/>
         </div>
         <div className='tags'>
-            <span className='total-records'>Total Records Found: {cars.length}</span>
+            <span className='total-records'>Total Records Found: {length}</span>
             <div className='display-entries'>
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
                     <Select
-                        defaultValue={displayEntriesValue}
-                        value={displayEntriesValue}
+                        defaultValue={limit}
+                        value={limit}
                         onChange={handleEntriesChange}
                     >
                         <MenuItem value={5}>5 entries</MenuItem>
@@ -67,7 +70,7 @@ function Home() {
             ))}
           </Grid>
         </div>
-        <div className='pagination' >
+        <div className='pagination'>
           <Pagination 
               count={count}
               color='primary'
@@ -77,6 +80,7 @@ function Home() {
               onChange={handlePageChange}
               page={page}
           />
+          {/* <Pages /> */}
         </div>
     </div>
   )

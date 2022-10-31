@@ -10,19 +10,19 @@ import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
 
-function CarCard({id, year, make, model, image, badge}) {
+function CarCard({id, year, make, model, image}) {
   const navigate = useNavigate();
-  // let badge = "";
+  let badge = "";
   let color = ""
 
-  if(year > 2010){
-    // badge = "New";
+  if(year >= 2010){
+    badge = "New";
     color = "success";
-  } else if (year < 2000) {
-    // badge = "Classic";
+  } else if (year <= 2000) {
+    badge = "Classic";
     color = "error";
   } else {
-    // badge = "Old";
+    badge = "Old";
     color = "primary";
   }
 
