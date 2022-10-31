@@ -11,12 +11,8 @@ export const getCars = createAsyncThunk('cars/getCars', ({page, limit}) => {
     const url = (page && limit) ? `http://localhost:3000/cars?_page=${page}&_limit=${limit}` : `http://localhost:3000/cars`
     return fetch(url)
         .then((resp) => {
-            console.log(page, limit);
-            console.log(url);
             return resp.json();
-        }
-        
-        )
+        })
         .catch((err) => console.log(err));
 });
 
@@ -41,7 +37,7 @@ export const searchTermReducer = (state = initialState.searchTerm, action) => {
     }
 };
 
-export const displayEntiresReducer = (state = initialState.displayEntries, action) => {
+export const displayEntriesReducer = (state = initialState.displayEntries, action) => {
     switch (action.type) {
         case 'displayEntries/setDisplayEntries':
             return action.payload;

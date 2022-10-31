@@ -13,18 +13,7 @@
       "fuelType": "Gasoline",
       "transmission": "6-Speed Manual",
       "engine": "2.0L I4 16V MPFI DOHC Turbo",
-      "badge": "Old",
-      "features": [
-        "17 X 8 BBS One-Piece Forged Aluminum Wheels",
-        "4-Wheel Disc Brakes",
-        "4-wheel ABS Brakes",
-        "6-Speed Manual Transmission Aluminum Shift Knob",
-        "ABS Brakes",
-        "AM/FM Radio/Stereo",
-        "Air Conditioning",
-        "Alcantara Leather Seat Trim W/Red Stitching",
-        "Aluminum/Carbon-Fiber Brake Grip"
-      ]
+      "badge": "Old"
     },
     {
       "id": 1,
@@ -39,25 +28,7 @@
       "fuelType": "Gasoline",
       "transmission": "10-Speed Automatic",
       "engine": "3.0L V6 24V GDI DOHC Twin Turbo",
-      "badge": "New",
-      "features": [
-        "Adaptive Cruise Control",
-        "Heated Steering Wheel",
-        "Power Liftgate",
-        "Remote Start",
-        "Apple CarPlay/Android Auto",
-        "Bluetooth",
-        "Premium Sound System",
-        "Alloy Wheels",
-        "Sunroof/Moonroof",
-        "Tow Hitch",
-        "Backup Camera",
-        "Blind Spot Monitor",
-        "Brake Assist",
-        "Stability Control",
-        "Leather Seats",
-        "Third Row Seating"
-      ]
+      "badge": "New"
     },
     {
       "id": 2,
@@ -72,16 +43,7 @@
       "fuelType": "Gasoline",
       "transmission": "6-Speed Automatic",
       "engine": "5.7L V8 32V MPFI DOHC",
-      "badge": "New",
-      "features": [
-        "Adaptive Cruise Control",
-        "Blind Spot Monitor",
-        "Backup Camera",
-        "Lane Departure Warning",
-        "Stability Control",
-        "Heated Door Mirrors",
-        "Traction Control"
-      ]
+      "badge": "New"
     },
     {
       "category": "Sedan",

@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FormControl, MenuItem, Select, Grid, Pagination } from '@mui/material';
 import NavBar from '../components/NavBar';
@@ -7,7 +7,6 @@ import CarCard from '../components/CarCard';
 import { getCars, selectDisplayEntries, selectFilteredCars, selectPageNumber, setDisplayEntries, setPageNumber } from '../features/carPageSlice';
 import { AccountCircle } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
-import Pages from '../components/Pages';
 
 function Home() {
   const dispatch = useDispatch();
@@ -15,23 +14,28 @@ function Home() {
   const limit = useSelector(selectDisplayEntries);
   const page = useSelector(selectPageNumber);
   const cars = useSelector(selectFilteredCars);
+  const [length, setLength] = useState(0);
+  const count = Number.parseInt((length / limit) + 1);
+
+  const getDataLength = async () => {
+    const res = await fetch("http://localhost:3000/cars");
+    const data = await res.json();
+    setLength(data.length);
+  };
 
   const handleEntriesChange = (e) => {
     dispatch(setDisplayEntries(e.target.value));
     dispatch(setPageNumber(1));
-    dispatch(getCars({page, limit}));
   };
-
-  const count = Number.parseInt((cars.length / limit) + 1);
 
   const handlePageChange = (event, value) => {
     dispatch(setPageNumber(value));
   };
 
   useEffect(() => {
+    getDataLength();
     dispatch(getCars({page, limit}));
-    console.log('happening')
-  }, [limit, page]);
+  }, [page, limit, count]);
 
   return (
     <div>
@@ -41,7 +45,7 @@ function Home() {
             <AccountCircle sx={{fontSize: '3rem'}} onClick={() => navigate('/admin')}/>
         </div>
         <div className='tags'>
-            <span className='total-records'>Total Records Found: {cars.length}</span>
+            <span className='total-records'>Total Records Found: {length}</span>
             <div className='display-entries'>
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
@@ -66,7 +70,7 @@ function Home() {
             ))}
           </Grid>
         </div>
-        <div className='pagination' >
+        <div className='pagination'>
           <Pagination 
               count={count}
               color='primary'

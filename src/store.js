@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { carsReducer, displayEntiresReducer, pageNumberReducer, searchTermReducer } from "./features/carPageSlice";
+import { carsReducer, displayEntriesReducer, pageNumberReducer, searchTermReducer } from "./features/carPageSlice";
 
 export const store = configureStore({
     reducer: {
         searchTerm: searchTermReducer,
-        displayEntries: displayEntiresReducer,
+        displayEntries: displayEntriesReducer,
         pageNumber: pageNumberReducer,
         cars: carsReducer
     }
