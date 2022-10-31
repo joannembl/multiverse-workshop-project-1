@@ -75,7 +75,7 @@ function Admin() {
   return (
     <div>
         <form onSubmit={handleSubmit} >
-        <FormControl >
+        <FormControl>
             <InputLabel id="type-select-label">Category</InputLabel>
               <Select
                 labelId="type"
