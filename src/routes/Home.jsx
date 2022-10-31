@@ -12,27 +12,26 @@ import Pages from '../components/Pages';
 function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const displayEntriesValue = useSelector(selectDisplayEntries);
-  const page = useSelector(selectPageNumber);
   const limit = useSelector(selectDisplayEntries);
-
-	useEffect(() => {
-    dispatch(getCars(1, 10));
-    console.log('happening')
-  }, []);
-
+  const page = useSelector(selectPageNumber);
   const cars = useSelector(selectFilteredCars);
 
-  const handleEntriesChange = (event, value) => {
-    dispatch(setDisplayEntries(value));
-  }
+  const handleEntriesChange = (e) => {
+    dispatch(setDisplayEntries(e.target.value));
+    dispatch(setPageNumber(1));
+    dispatch(getCars({page, limit}));
+  };
 
   const count = Number.parseInt((cars.length / limit) + 1);
 
   const handlePageChange = (event, value) => {
-    dispatch(getCars({page, limit}))
     dispatch(setPageNumber(value));
-};
+  };
+
+  useEffect(() => {
+    dispatch(getCars({page, limit}));
+    console.log('happening')
+  }, [limit, page]);
 
   return (
     <div>
@@ -47,8 +46,8 @@ function Home() {
                 <span>Display: </span>
                 <FormControl sx={{ m: 1, minWidth: 150 }}>
                     <Select
-                        defaultValue={displayEntriesValue}
-                        value={displayEntriesValue}
+                        defaultValue={limit}
+                        value={limit}
                         onChange={handleEntriesChange}
                     >
                         <MenuItem value={5}>5 entries</MenuItem>
@@ -77,6 +76,7 @@ function Home() {
               onChange={handlePageChange}
               page={page}
           />
+          {/* <Pages /> */}
         </div>
     </div>
   )

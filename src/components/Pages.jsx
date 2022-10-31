@@ -7,11 +7,10 @@ function Pages() {
     const dispatch = useDispatch();
     const page = useSelector(selectPageNumber);
     const cars = useSelector(selectFilteredCars);
-    const limit = useSelector(selectDisplayEntries);
+    const limit = Number(useSelector(selectDisplayEntries));
+    console.log(limit);
     const count = Number.parseInt((cars.length / limit) + 1);
     const x = {page, limit};
-
-    //console.log(x)
 
     const handlePageChange = (event, value) => {
         dispatch(getCars({page, limit}))

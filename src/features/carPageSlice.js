@@ -8,10 +8,11 @@ const initialState = {
 };
 
 export const getCars = createAsyncThunk('cars/getCars', ({page, limit}) => {
-    const url = (page && limit) ? `http://localhost:3000/cars?_pages=${page}&_limit=${limit}` : `http://localhost:3000/cars`
+    const url = (page && limit) ? `http://localhost:3000/cars?_page=${page}&_limit=${limit}` : `http://localhost:3000/cars`
     return fetch(url)
         .then((resp) => {
-            console.log(page);
+            console.log(page, limit);
+            console.log(url);
             return resp.json();
         }
         
