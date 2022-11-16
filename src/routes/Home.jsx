@@ -35,7 +35,7 @@ function Home() {
   useEffect(() => {
     getDataLength();
     dispatch(getCars({page, limit}));
-  }, [page, limit, count]);
+  }, [page, length, limit, count]);
 
   return (
     <div>
